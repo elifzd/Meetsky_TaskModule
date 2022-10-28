@@ -1,4 +1,3 @@
-@wip
 Feature: Tasks Module Functionality
   Agile story: As a user, I should be able to create a new task list or
   a single task and add any task to completed and important tasks list.
@@ -30,7 +29,7 @@ Feature: Tasks Module Functionality
   Scenario: Checking the number of all uncompleted tasks
     When user check left column "Current Tab" section
     Then user should see the number of uncompleted tasks next to current tab
-
+  @wip
   Scenario: Checking not able to create a new list of task with already existing name
     When user will click create new list button
     And user enter a existing list name and click enter

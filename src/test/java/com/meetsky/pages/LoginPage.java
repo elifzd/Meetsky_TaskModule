@@ -6,12 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TaskPage {
+public class LoginPage {
 
-    public TaskPage(){
+    public LoginPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
 
     @FindBy(id="user")
     public WebElement inputUsername;
@@ -21,6 +20,9 @@ public class TaskPage {
 
     @FindBy(id="submit-form")
     public WebElement loginButton;
+
+    @FindBy(xpath="(//li[@data-id='tasks'])[1]")
+    public WebElement tasksButton;
 
     public void login(){
         Driver.getDriver().get(ConfigurationReader.getProperty("meetsky.url"));
