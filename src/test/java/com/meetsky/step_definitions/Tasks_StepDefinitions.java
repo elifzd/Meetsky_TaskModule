@@ -99,7 +99,7 @@ public class Tasks_StepDefinitions {
     @Then("user can see error message")
     public void user_can_see_error_message() {
         WebElement list = tasksPage.assertList;
-        Assert.assertTrue(list.);
+
     }
 
 
