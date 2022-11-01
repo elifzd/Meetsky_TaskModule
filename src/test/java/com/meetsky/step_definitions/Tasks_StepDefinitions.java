@@ -3,6 +3,7 @@ package com.meetsky.step_definitions;
 import com.github.dockerjava.api.model.Task;
 import com.meetsky.pages.LoginPage;
 import com.meetsky.pages.TasksPage;
+import com.meetsky.utilities.BrowserUtils;
 import com.meetsky.utilities.ConfigurationReader;
 import com.meetsky.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -32,7 +33,8 @@ public class Tasks_StepDefinitions {
     }
     @When("user enter a list name and click enter")
     public void user_enter_a_list_name_and_click_enter() {
-        tasksPage.newListInput.sendKeys("Cookies"+Keys.ENTER);
+        tasksPage.newListInput.sendKeys("Cookies");
+        tasksPage.sendKeysList.click();
     }
     @Then("user can see all the created lists")
     public void user_can_see_all_the_created_lists() {
@@ -43,6 +45,7 @@ public class Tasks_StepDefinitions {
 
     @When("user enter a task name on task box")
     public void user_enter_a_task_name_on_task_box() {
+        tasksPage.tikIcon.click();
         tasksPage.addTaskButton.click();
     }
     @When("user click enter after name")
@@ -63,8 +66,12 @@ public class Tasks_StepDefinitions {
         WebElement compTask = tasksPage.assertTask;
         Assert.assertTrue(compTask.isDisplayed());
     }
+
+
+
     @When("user created the tasks")
     public void user_created_the_tasks() {
+        tasksPage.clickAll.click();
         WebElement taskAll = tasksPage.taskAssertAll;
         Assert.assertTrue(taskAll.isDisplayed());
     }
@@ -80,6 +87,8 @@ public class Tasks_StepDefinitions {
 //this one check again
     @When("user check left column {string} section")
     public void user_check_left_column_section(String string) {
+        BrowserUtils.sleep(10);
+        tasksPage.currentTab.click();
         tasksPage.currentTab.isDisplayed();
     }
     @Then("user should see the number of uncompleted tasks next to current tab")

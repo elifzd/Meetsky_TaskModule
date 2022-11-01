@@ -21,6 +21,12 @@ public class TasksPage {
     @FindBy(xpath = "//*[@id=\"app-navigation-vue\"]")
     public WebElement assertList;
 
+    @FindBy(xpath = "//*[@id=\"app-navigation-vue\"]/ul/li[7]/ul/div/form/input[3]")
+    public WebElement sendKeysList;
+
+    @FindBy(xpath = "//*[@id=\"list_cookies-8\"]")
+    public WebElement listArea;
+
 //Second scenario
     @FindBy(xpath = "//input[@class='transparent reactive']")
     public WebElement addTaskButton;
@@ -29,6 +35,10 @@ public class TasksPage {
     public WebElement assertTask;
 
 //Third scenario
+
+    @FindBy(xpath = "//*[@id=\"appmenu\"]/li[11]/a")
+    public WebElement tikIcon;
+
     @FindBy(xpath = "//*[@id=\"app-content-vue\"]/div/div[2]/div[1]/ol/li[2]/div[1]/div[1]/label")
     public WebElement taskCompButton;
 
@@ -36,11 +46,14 @@ public class TasksPage {
     public WebElement taskAssertAll;
 
 //Fourth Task
+    @FindBy(xpath = "//*[@id=\"collection_all\"]/a")
+    public WebElement clickAll;
+
     @FindBy(xpath = "//*[@id=\"app-content-vue\"]/div/div[2]/div[1]/ol/li/div[1]/div[3]/button/span[1]")
     public WebElement starButton;
 
 //Fifth Task
-    @FindBy(css = "/html/body/div[3]/div/ul/li[5]/div/div[1]/div")
+    @FindBy(xpath = "//*[@id=\"collection_current\"]/div/div[1]")
     public WebElement currentTab;
 
 
