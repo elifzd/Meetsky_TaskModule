@@ -28,7 +28,7 @@ public class TasksPage {
     public WebElement listArea;
 
 //Second scenario
-    @FindBy(xpath = "//input[@class='transparent reactive']")
+    @FindBy(xpath = "//*[@id=\"app-content-vue\"]/div/div[1]/div[1]/form/input")
     public WebElement addTaskButton;
 
     @FindBy(xpath = "//*[@id=\"app-content-vue\"]/div")

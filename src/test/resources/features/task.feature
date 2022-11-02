@@ -30,10 +30,3 @@ Feature: Tasks Module Functionality
   Scenario: Checking the number of all uncompleted tasks
     When user check left column "Current Tab" section
     Then user should see the number of uncompleted tasks next to current tab
-
-  Scenario: Checking not able to create a new list of task with already existing name
-    When user will click create new list button
-    And user enter a existing list name and click enter
-    Then user can see error message
-
-

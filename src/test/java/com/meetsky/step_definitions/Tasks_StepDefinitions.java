@@ -21,14 +21,19 @@ public class Tasks_StepDefinitions {
 
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() {
+        BrowserUtils.sleep(5);
         loginPage.login();
     }
     @Given("the user enter the tasks section")
     public void the_user_enter_the_tasks_section() {
         loginPage.tasksButton.click();
     }
+
+
+
     @When("user click create new list button")
     public void user_click_create_new_list_button() {
+        loginPage.tasksButton.click();
         tasksPage.addListButton.click();
     }
     @When("user enter a list name and click enter")
@@ -43,13 +48,18 @@ public class Tasks_StepDefinitions {
 
     }
 
+
+
     @When("user enter a task name on task box")
     public void user_enter_a_task_name_on_task_box() {
-        tasksPage.tikIcon.click();
+        BrowserUtils.waitForVisibility(tasksPage.tikIcon,10);
+        loginPage.tasksButton.click();
+        //tasksPage.tikIcon.click();
         tasksPage.addTaskButton.click();
     }
     @When("user click enter after name")
     public void user_click_enter_after_name() {
+        loginPage.tasksButton.click();
         tasksPage.addTaskButton.sendKeys("From Intellij"+Keys.ENTER);
     }
     @Then("user can able to create new task and it should appear on the page")
@@ -57,8 +67,13 @@ public class Tasks_StepDefinitions {
         WebElement taskCheck = tasksPage.assertTask;
         Assert.assertTrue(taskCheck.isDisplayed());
     }
+
+
+
     @When("user click to the box near the name")
     public void user_click_to_the_box_near_the_name() {
+        loginPage.tasksButton.click();
+        BrowserUtils.waitForVisibility(tasksPage.taskCompButton,5);
         tasksPage.taskCompButton.click();
     }
     @Then("user should be able to add the task to the completed tasks")
@@ -71,6 +86,8 @@ public class Tasks_StepDefinitions {
 
     @When("user created the tasks")
     public void user_created_the_tasks() {
+        loginPage.tasksButton.click();
+        BrowserUtils.waitForVisibility(tasksPage.clickAll,5);
         tasksPage.clickAll.click();
         WebElement taskAll = tasksPage.taskAssertAll;
         Assert.assertTrue(taskAll.isDisplayed());
@@ -87,7 +104,8 @@ public class Tasks_StepDefinitions {
 //this one check again
     @When("user check left column {string} section")
     public void user_check_left_column_section(String string) {
-        BrowserUtils.sleep(10);
+        loginPage.tasksButton.click();
+        BrowserUtils.waitForVisibility(tasksPage.currentTab,5);
         tasksPage.currentTab.click();
         tasksPage.currentTab.isDisplayed();
     }
@@ -96,20 +114,7 @@ public class Tasks_StepDefinitions {
         WebElement current = tasksPage.currentTab;
         Assert.assertTrue(current.isDisplayed());
     }
-    //new one
-    @When("user will click create new list button")
-    public void user_will_click_create_new_list_button() {
-        tasksPage.addListButton.click();
-    }
-    @When("user enter a existing list name and click enter")
-    public void user_enter_a_existing_list_name_and_click_enter() {
-        tasksPage.newListInput.sendKeys("Cookies"+Keys.ENTER);
-    }
-    @Then("user can see error message")
-    public void user_can_see_error_message() {
-        WebElement list = tasksPage.assertList;
 
-    }
 
 
 }

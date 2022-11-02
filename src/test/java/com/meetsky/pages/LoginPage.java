@@ -21,7 +21,7 @@ public class LoginPage {
     @FindBy(id="submit-form")
     public WebElement loginButton;
 
-    @FindBy(xpath="(//li[@data-id='tasks'])[1]")
+    @FindBy(xpath="//*[@id=\"appmenu\"]/li[11]/a")
     public WebElement tasksButton;
 
     public void login(){
