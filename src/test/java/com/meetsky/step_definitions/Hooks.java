@@ -1,4 +1,4 @@
-package com.meetsky.step_definitions;
+//package com.meetsky.step_definitions;
 
 import com.meetsky.utilities.BrowserUtils;
 import com.meetsky.utilities.Driver;
@@ -8,8 +8,8 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-public class Hooks {
-
+//public class Hooks {
+/*
     //import from io.cucumber.java not from junit
     @Before(order = 1)
     public void setupScenario(){
@@ -40,12 +40,9 @@ public class Hooks {
 
         }
 
-        BrowserUtils.sleep(5);
-        Driver.closeDriver();
+        //BrowserUtils.sleep(5);
+       // Driver.closeDriver();
 
-
-        //System.out.println("====Closing browser using cucumber @After");
-        //System.out.println("====Scenario ended/ Take screenshot if failed!");
     }
 
     //@BeforeStep
@@ -61,3 +58,6 @@ public class Hooks {
 
 
 }
+
+
+ */
